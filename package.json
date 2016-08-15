@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "simplifies access to node hash functions",
   "main": "dist/index.js",
-  "typings":"dist/index.d.ts",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "test": "(npmts)"
   },
@@ -26,5 +26,8 @@
     "npmts-g": "^5.2.8",
     "should": "^11.1.0",
     "typings-test": "^1.0.1"
+  },
+  "dependencies": {
+    "typings-global": "^1.0.6"
   }
 }

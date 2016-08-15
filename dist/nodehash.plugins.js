@@ -1,0 +1,4 @@
+"use strict";
+require("typings-global");
+exports.crypto = require("crypto");
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibm9kZWhhc2gucGx1Z2lucy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3RzL25vZGVoYXNoLnBsdWdpbnMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFFBQU8sZ0JBQWdCLENBQUMsQ0FBQTtBQUNWLGNBQU0sV0FBVyxRQUFRLENBQUMsQ0FBQyJ9
