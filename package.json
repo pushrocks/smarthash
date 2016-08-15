@@ -1,0 +1,30 @@
+{
+  "name": "nodehash",
+  "version": "1.0.0",
+  "description": "simplifies access to node hash functions",
+  "main": "dist/index.js",
+  "typings":"dist/index.d.ts",
+  "scripts": {
+    "test": "(npmts)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pushrocks/nodehash.git"
+  },
+  "keywords": [
+    "hash",
+    "node",
+    "sha"
+  ],
+  "author": "Lossless GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pushrocks/nodehash/issues"
+  },
+  "homepage": "https://github.com/pushrocks/nodehash#readme",
+  "devDependencies": {
+    "npmts-g": "^5.2.8",
+    "should": "^11.1.0",
+    "typings-test": "^1.0.1"
+  }
+}
