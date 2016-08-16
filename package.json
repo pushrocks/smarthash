@@ -14,7 +14,7 @@
   "keywords": [
     "hash",
     "node",
-    "sha"
+    "sha265"
   ],
   "author": "Lossless GmbH",
   "license": "MIT",
@@ -28,6 +28,10 @@
     "typings-test": "^1.0.1"
   },
   "dependencies": {
+    "@types/q": "0.x.x",
+    "@types/through2": "0.x.x",
+    "q": "^1.4.1",
+    "through2": "^2.0.1",
     "typings-global": "^1.0.6"
   }
 }

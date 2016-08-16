@@ -10,6 +10,24 @@ We recommend the use of TypeScript for best in class intellisense.
 ```typescript
 import * as nodehash from "nodehash";
 
-let sha256 = new nodehash.sha256();
-let myHashedString = sha256.fromString();
+// from stream
+let readStream = fs.createReadStream("./somefile.txt");
+nodehash.sha256FromStream(readStream)
+    .then((resultString){
+        console.log(resultString); // prints hash of the file
+    });
+
+// from file
+nodehash.sha256FromFile("./somefile.txt")
+    .then((resultString){
+        console.log(resultString); // prints hash of the file
+    });
+
+// from string
+nodehash.sha256FromString("some weird random string");
+    .then((resultString){
+        console.log(resultString); // prints hash of the file
+    });
+
+let hashString = nodehash.sha256FromStringSync("some weird random string")
 ```
