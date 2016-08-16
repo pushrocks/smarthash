@@ -11,7 +11,7 @@ We recommend the use of TypeScript for best in class intellisense.
 import * as nodehash from "nodehash";
 
 // from stream
-let readStream = fs.createReadStream("./somefile.txt");
+let readStream = fs.createReadStream("./somefile.txt")
 nodehash.sha256FromStream(readStream)
     .then((resultString){
         console.log(resultString); // prints hash of the file
@@ -24,10 +24,10 @@ nodehash.sha256FromFile("./somefile.txt")
     });
 
 // from string
-nodehash.sha256FromString("some weird random string");
+nodehash.sha256FromString("some weird random string")
     .then((resultString){
         console.log(resultString); // prints hash of the file
     });
 
-let hashString = nodehash.sha256FromStringSync("some weird random string")
+let hashString = nodehash.sha256FromStringSync("some weird random string");
 ```
