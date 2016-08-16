@@ -14,7 +14,9 @@
   "keywords": [
     "hash",
     "node",
-    "sha265"
+    "sha256",
+    "stream",
+    "filehash"
   ],
   "author": "Lossless GmbH",
   "license": "MIT",
