@@ -27,15 +27,15 @@
   },
   "homepage": "https://github.com/pushrocks/nodehash#readme",
   "devDependencies": {
-    "@gitzone/tsbuild": "^2.0.22",
-    "@gitzone/tsrun": "^1.1.12",
-    "@gitzone/tstest": "^1.0.15",
+    "@gitzone/tsbuild": "^2.1.8",
+    "@gitzone/tsrun": "^1.1.17",
+    "@gitzone/tstest": "^1.0.18",
     "@pushrocks/tapbundle": "^3.0.7",
-    "@types/node": "^10.9.4"
+    "@types/node": "^10.12.19"
   },
   "dependencies": {
     "@pushrocks/smartpromise": "^2.0.5",
-    "@types/through2": "^2.0.33",
-    "through2": "^2.0.3"
+    "@types/through2": "^2.0.34",
+    "through2": "^3.0.0"
   }
 }
