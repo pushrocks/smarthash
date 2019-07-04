@@ -4,11 +4,11 @@ import * as helpers from './nodehash.helpers';
 /**
  * creates sha256 Hash from Stream
  */
-export let sha256FromStream = (input): Promise<string> => {
-  let done = plugins.q.defer<string>();
-  let hash = plugins.crypto.createHash('sha256');
+export const sha256FromStream = (input: plugins.stream.Stream): Promise<string> => {
+  const done = plugins.smartpromise.defer<string>();
+  const hash = plugins.crypto.createHash('sha256');
 
-  hash['setEncoding']('hex');
+  hash.setEncoding('hex');
   input.pipe(hash).pipe(helpers.hashStreamPipeStop(done.resolve));
   return done.promise;
 };
@@ -16,21 +16,18 @@ export let sha256FromStream = (input): Promise<string> => {
 /**
  * creates sha256 Hash from File;
  */
-export let sha256FromFile = (filePath: string) => {
-  let done = plugins.q.defer();
-  let absolutePath = plugins.path.resolve(filePath);
-  let readableStream = plugins.fs.createReadStream(absolutePath);
-  sha256FromStream(readableStream).then(resultHashString => {
-    done.resolve(resultHashString);
-  });
-  return done.promise;
+export const sha256FromFile = async (filePath: string): Promise<string> => {
+  const absolutePath = plugins.path.resolve(filePath);
+  const readableStream = plugins.fs.createReadStream(absolutePath);
+  const hashResult = sha256FromStream(readableStream);
+  return hashResult;
 };
 
 /**
  * Computes sha256 Hash from String synchronously
  */
-export let sha256FromStringSync = stringArg => {
-  let hash = plugins.crypto.createHash('sha256');
+export let sha256FromStringSync = (stringArg): string => {
+  const hash = plugins.crypto.createHash('sha256');
   hash.update(stringArg);
   return hash.digest('hex');
 };
@@ -38,11 +35,18 @@ export let sha256FromStringSync = stringArg => {
 /**
  * Computes sha256 Hash from String
  */
-export let sha256FromString = stringArg => {
-  let done = plugins.q.defer();
-  let hash = plugins.crypto.createHash('sha256');
+export const sha256FromString = async(stringArg: string): Promise<string> => {
+  const hash = plugins.crypto.createHash('sha256');
   hash.update(stringArg);
-  let hashResult = hash.digest('hex');
-  done.resolve(hashResult);
-  return done.promise;
+  const hashResult = hash.digest('hex');
+  return hashResult;
+};
+
+/**
+ * computes sha265 Hash from Object
+ */
+export const sha265FromObject = async (objectArg: any): Promise<string> => {
+  const stringifiedObject = plugins.smartjson.Smartjson.stringify(objectArg, {});
+  const hashResult = await sha256FromString(stringifiedObject);
+  return hashResult;
 };

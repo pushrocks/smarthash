@@ -1,6 +1,28 @@
-export import crypto = require('crypto');
-export import fs = require('fs');
-export import path = require('path');
-export import q = require('@pushrocks/smartpromise');
-export import stream = require('stream');
-export import through2 = require('through2');
+// node native scope
+import crypto from 'crypto';
+import * as fs from 'fs';
+import * as path from 'path';
+import * as stream from 'stream';
+
+export {
+  crypto,
+  fs,
+  path,
+  stream
+};
+
+// pushrocks scope
+import * as smartpromise from '@pushrocks/smartpromise';
+import * as smartjson from '@pushrocks/smartjson';
+
+export {
+  smartpromise,
+  smartjson
+};
+
+// thirdparty scope
+import through2 from 'through2';
+
+export {
+  through2
+};
