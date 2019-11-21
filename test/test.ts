@@ -47,4 +47,9 @@ tap.test('should produce reproducible hash from Object', async () => {
   expect(hash1).to.not.equal(hash3);
 });
 
+tap.test('should create md5hash from string', async () => {
+  const md5Hash = await smarthash.md5FromString('hellothere');
+  expect(md5Hash).to.equal('c6f7c372641dd25e0fddf0215375561f');
+});
+
 tap.start();
