@@ -35,7 +35,7 @@ export let sha256FromStringSync = (stringArg): string => {
 /**
  * Computes sha256 Hash from String
  */
-export const sha256FromString = async(stringArg: string): Promise<string> => {
+export const sha256FromString = async (stringArg: string): Promise<string> => {
   const hash = plugins.crypto.createHash('sha256');
   hash.update(stringArg);
   const hashResult = hash.digest('hex');

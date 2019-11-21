@@ -30,18 +30,18 @@ tap.test('sha256fromFile should convert a Stream to sha256', async () => {
 
 tap.test('should produce reproducible hash from Object', async () => {
   const hash1 = await smarthash.sha265FromObject({
-    'hithere': 1,
-    'wow': 'two'
+    hithere: 1,
+    wow: 'two'
   });
 
   const hash2 = await smarthash.sha265FromObject({
-    'wow': 'two',
-    'hithere': 1,
+    wow: 'two',
+    hithere: 1
   });
 
   const hash3 = await smarthash.sha265FromObject({
-    'wow': 'twoe',
-    'hithere': 1,
+    wow: 'twoe',
+    hithere: 1
   });
   expect(hash1).to.equal(hash2);
   expect(hash1).to.not.equal(hash3);
