@@ -10,6 +10,7 @@
     }
   },
   "npmci": {
-    "npmAccessLevel": "public"
+    "npmAccessLevel": "public",
+    "npmRegistryUrl": "verdaccio.lossless.one"
   }
 }

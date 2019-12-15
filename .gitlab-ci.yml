@@ -1,6 +1,10 @@
 # gitzone ci_default
 image: registry.gitlab.com/hosttoday/ht-docker-node:npmci
 
+cache:
+  paths:
+    - .npmci_cache/
+  key: '$CI_BUILD_STAGE'
 
 stages:
   - security
