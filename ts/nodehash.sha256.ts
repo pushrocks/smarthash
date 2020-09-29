@@ -26,7 +26,7 @@ export const sha256FromFile = async (filePath: string): Promise<string> => {
 /**
  * Computes sha256 Hash from String synchronously
  */
-export let sha256FromStringSync = (stringArg): string => {
+export const sha256FromStringSync = (stringArg: string): string => {
   const hash = plugins.crypto.createHash('sha256');
   hash.update(stringArg);
   return hash.digest('hex');
