@@ -1,12 +1,12 @@
 import * as plugins from './nodehash.plugins';
 
-export const hashStreamPipeStop = resolveFuntion => {
+export const hashStreamPipeStop = (resolveFuntion) => {
   const forEach = (chunk: Buffer, enc, cb) => {
     resolveFuntion(chunk.toString('utf8'));
     cb(null, chunk);
   };
 
-  const atEnd = cb => {
+  const atEnd = (cb) => {
     cb();
   };
 

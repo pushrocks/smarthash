@@ -17,7 +17,7 @@ tap.test('sha256fromStringSync should convert a String to sha256 hash synchronou
   expect(resultString).to.equal(compareString);
 });
 
-tap.test('sha256fromStream should convert a Stream to sha256', async tools => {
+tap.test('sha256fromStream should convert a Stream to sha256', async (tools) => {
   const readStream = fs.createReadStream('./test/testImageForHash.jpg');
   const resultString: string = await smarthash.sha256FromStream(readStream);
   expect(resultString).to.equal('45b80413ed93acb495691186ce61850449439f9183352b9bff96d5533fa1046c');
@@ -31,17 +31,17 @@ tap.test('sha256fromFile should convert a Stream to sha256', async () => {
 tap.test('should produce reproducible hash from Object', async () => {
   const hash1 = await smarthash.sha265FromObject({
     hithere: 1,
-    wow: 'two'
+    wow: 'two',
   });
 
   const hash2 = await smarthash.sha265FromObject({
     wow: 'two',
-    hithere: 1
+    hithere: 1,
   });
 
   const hash3 = await smarthash.sha265FromObject({
     wow: 'twoe',
-    hithere: 1
+    hithere: 1,
   });
   expect(hash1).to.equal(hash2);
   expect(hash1).to.not.equal(hash3);

@@ -46,7 +46,7 @@ export const sha256FromString = async (stringArg: string): Promise<string> => {
  * computes sha265 Hash from Object
  */
 export const sha265FromObject = async (objectArg: any): Promise<string> => {
-  const stringifiedObject = plugins.smartjson.Smartjson.stringify(objectArg, {});
+  const stringifiedObject = plugins.smartjson.stringify(objectArg, {});
   const hashResult = await sha256FromString(stringifiedObject);
   return hashResult;
 };
