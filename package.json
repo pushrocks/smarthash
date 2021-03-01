@@ -1,6 +1,6 @@
 {
   "name": "@pushrocks/smarthash",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "private": false,
   "description": "simplified access to node hash functions",
   "main": "dist_ts/index.js",
