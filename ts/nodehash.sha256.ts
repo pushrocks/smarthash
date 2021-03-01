@@ -43,6 +43,16 @@ export const sha256FromString = async (stringArg: string): Promise<string> => {
 };
 
 /**
+ * Computes sha256 Hash from String
+ */
+export const sha256FromBuffer = async (bufferArg: Buffer): Promise<string> => {
+  const hash = plugins.crypto.createHash('sha256');
+  hash.update(bufferArg);
+  const hashResult = hash.digest('hex');
+  return hashResult;
+};
+
+/**
  * computes sha265 Hash from Object
  */
 export const sha265FromObject = async (objectArg: any): Promise<string> => {
